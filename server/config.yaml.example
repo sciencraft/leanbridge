@@ -1,0 +1,54 @@
+# LeanBridge 配置文件示例 (config.yaml.example)
+# 请复制此文件并重命名为 config.yaml，并根据你的环境进行修改。
+
+# 1. LeanExplore API 配置 (主要用于搜索 Agent)
+lean_explore:
+  timeout: 60                 # API 请求超时时间（秒）
+  truncate_output: false      # 是否截断过长的搜索结果（防止上下文超出限制）
+  max_output_length: 10000    # 搜索结果中代码/文档的最大长度（配合截断使用）
+  search_limit: 3             # 默认搜索结果数量限制
+  # 预配置的 Lean 包列表，用于限定搜索范围
+  support_packages: ["Mathlib", "PhysLean"]
+
+# 2. 本地 Lean 编译配置 (用于代码执行官和验证 Agent)
+lean:
+  timeout: 300                # Lean 代码编译验证的超时时间（秒）
+  max_attempts: 3             # 编译失败后的最大重试次数
+  compile_dir: "E:\\Lean\\LeanBridge" # 本地 Lean 项目编译的根目录（需安装好 Lake 环境）
+
+# 3. LLM (大模型) 通用配置
+llm:
+  temperature: 1              # 生成温度
+  max_tokens: 32000           # 单次生成的最大 Token 限制
+  nl_model: 'kimi-k2-0905-preview' # 默认用于自然语言处理的模型
+  check_models:               # 用于快速验证或多模型比对的模型列表
+    - 'kimi-k2-0905-preview'
+    - 'openai/gpt-oss-120b'
+  
+  # Agent 角色与模型名称的映射
+  # 这里的名称必须在下面的 models 字典中定义，或者在环境变量中提供
+  plan_agent: 'openai/gpt-oss-120b'
+  code_agent: 'openai/gpt-oss-120b'
+  search_agent: 'openai/gpt-oss-120b'
+  memory_agent: 'openai/gpt-oss-120b'
+
+  # 模型注册表 (Lookup Table)
+  # 将模型名称映射到具体的 API key 和 base_url。
+  # 提示：为了安全起见，敏感的 API Key 也可以在 .env 中通过 JSON 或环境变量覆盖。
+  models:
+    kimi-k2-0905-preview:
+      api_key: "sk-..."
+      base_url: "https://api.moonshot.cn/v1"
+    deepseek-chat:
+      api_key: "sk-..."
+      base_url: "https://api.deepseek.com/v1"
+    openai/gpt-oss-120b:
+      api_key: "lm-studio"      # 如果是本地 LM Studio，通常不需要实际的 Key
+      base_url: "http://10.208.15.184:1234/v1"
+    gemini-3-pro-preview:
+      api_key: "..."
+      base_url: "https://generativelanguage.googleapis.com/v1beta/openai/"
+
+# 注意事项：
+# 1. 如果你在 .env 中设置了同名变量（如 LEAN__COMPILE_DIR），环境变量的优先级更高。
+# 2. 对于模型密钥，Pydantic 支持通过环境变量 LLM__MODELS='{"name":{"api_key":"..."}}' 进行大块覆盖。

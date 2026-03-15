@@ -1,0 +1,25 @@
+# OpenAI Agents SDK (Custom Version)
+openai-agents @ git+https://github.com/sciencraft/openai-agents-python.git
+
+ag-ui-protocol
+pandas
+PyJWT
+PyMuPDF
+cairosvg
+bs4
+sqlalchemy
+openai
+mcp
+fastmcp
+tiktoken
+fastapi
+mlflow
+ragflow_sdk
+schedule
+passlib
+bcrypt
+cachetools
+uvicorn
+python-dotenv
+pydantic-settings
+PyYAML
