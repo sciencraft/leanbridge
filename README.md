@@ -1,11 +1,12 @@
 # LeanBridge Project
 
-LeanBridge is a multi-agent Lean 4 proof assistant. The project adopts a decoupled frontend-backend architecture, with the backend based on the OpenAI Agents SDK and the frontend based on the AG-UI protocol and React.
+LeanBridge is a multi-agent Lean 4 proof assistant. The project adopts a decoupled frontend-backend architecture, with the backend based on the OpenAI Agents SDK and the frontend based on the AG-UI protocol and React. Sci-Craft / LeanBridge won **first place** at the [AI for Science Hackathon · Beijing](https://ai4.science/events/beijing-hackathon#).
 
 ## Project Structure
 
 ```text
 LeanBridge/
+├── docs/screenshots/    # Frontend UI screenshots used in this README
 ├── client/              # [TBD] React-based web frontend
 └── server/              # [Core] Python backend project (Agents, API, Lean interaction)
     ├── agent/           # Agent logic (Plan, Code, Search, Verify)
@@ -56,4 +57,22 @@ LeanBridge/
 
 ## Frontend (Client)
 
-* The frontend project is currently reserved and will be updated in the future.
+The web client is a React app for **Sci-Craft**, a distributed research platform. LeanBridge appears in the sidebar as the formal-proof assistant. Representative screens:
+
+### Homepage
+
+Landing page for Sci-Craft: product intro, call to action, and the four platform pillars (cross-disciplinary collaboration, AI Copilot, task market, and verifiable proofs).
+
+![Sci-Craft homepage](docs/screenshots/scicraft_homepage.png)
+
+### Researcher Profile
+
+Personal workspace with research overview, fields, academic reputation, and project progress (created / joined projects, citations, and quick actions).
+
+![Sci-Craft researcher profile](docs/screenshots/scicraft_person.png)
+
+### Virtual Town
+
+Map-style academic space: rooms (library, lab, AI hall), nearby researchers, and a mini-map for exploring and chatting in the virtual campus.
+
+![Sci-Craft Virtual Town](docs/screenshots/scicraft_virtual_town.png)

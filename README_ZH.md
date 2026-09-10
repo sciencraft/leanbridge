@@ -1,11 +1,12 @@
 # LeanBridge Project
 
-LeanBridge 是一个多智能体Lean 4 证明助手。项目采用了前后端分离的结构，后端基于 OpenAI Agents SDK，前端基于AG-UI协议和React。
+LeanBridge 是一个多智能体 Lean 4 证明助手。项目采用了前后端分离的结构，后端基于 OpenAI Agents SDK，前端基于 AG-UI 协议和 React。Sci-Craft / LeanBridge 在 [AI for Science Hackathon · 北京站](https://ai4.science/events/beijing-hackathon#) 获得**第一名**。
 
 ## 项目结构
 
 ```text
 LeanBridge/
+├── docs/screenshots/    # README 中使用的前端界面截图
 ├── client/              # [待更新] 基于 React 的网页前端
 └── server/              # [核心] Python 后端项目 (Agent, API, Lean 交互)
     ├── agent/           # Agent 逻辑 (Plan, Code, Search, Verify)
@@ -56,4 +57,22 @@ LeanBridge/
 
 ## 前端 (Client)
 
-* 前端项目目前预留，待后续更新。
+Web 前端是 **Sci-Craft** 的 React 客户端，面向分布式科研协作。侧边栏中的 LeanBridge 是形式化证明助手。当前界面示例如下：
+
+### 首页
+
+Sci-Craft 落地页：产品介绍、「开始探索」入口，以及平台四大能力（跨学科协作网络、AI Copilot、任务市场、可复现与可信验证）。
+
+![Sci-Craft 首页](docs/screenshots/scicraft_homepage.png)
+
+### 个人主页
+
+研究者工作台：研究概览、研究领域、学术声望，以及项目进度（创建/参与项目、论文引用与快捷操作）。
+
+![Sci-Craft 个人主页](docs/screenshots/scicraft_person.png)
+
+### 虚拟学术小镇
+
+地图式学术空间：图书馆、实验室、AI 学术大厅等房间，以及附近研究者与小地图，用于在虚拟校园中探索与交流。
+
+![Sci-Craft 虚拟学术小镇](docs/screenshots/scicraft_virtual_town.png)
