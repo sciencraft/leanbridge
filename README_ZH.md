@@ -59,6 +59,12 @@ LeanBridge/
 
 Web 前端是 **Sci-Craft** 的 React 客户端，面向分布式科研协作。侧边栏中的 LeanBridge 是形式化证明助手。当前界面示例如下：
 
+### LeanBridge 灵桥
+
+证明工作台：历史会话、示例定理（柯西积分公式、Yoneda 引理、谱定理），以及多智能体执行轨迹（检索、形式化、规划，再交给 Code Agent / `lean_code_generator`）。
+
+![Sci-Craft LeanBridge 灵桥](docs/screenshots/scicraft_leanbridge.png)
+
 ### 首页
 
 Sci-Craft 落地页：产品介绍、「开始探索」入口，以及平台四大能力（跨学科协作网络、AI Copilot、任务市场、可复现与可信验证）。

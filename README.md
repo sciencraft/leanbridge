@@ -59,6 +59,12 @@ LeanBridge/
 
 The web client is a React app for **Sci-Craft**, a distributed research platform. LeanBridge appears in the sidebar as the formal-proof assistant. Representative screens:
 
+### LeanBridge
+
+The proof workspace: chat history, example theorems (Cauchy integral formula, Yoneda lemma, spectral theorem), and a live agent trace (search, formalize, plan, then Code Agent / `lean_code_generator`).
+
+![Sci-Craft LeanBridge](docs/screenshots/scicraft_leanbridge.png)
+
 ### Homepage
 
 Landing page for Sci-Craft: product intro, call to action, and the four platform pillars (cross-disciplinary collaboration, AI Copilot, task market, and verifiable proofs).
